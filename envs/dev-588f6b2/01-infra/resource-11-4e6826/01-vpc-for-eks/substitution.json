@@ -1,0 +1,22 @@
+{
+  "operations": [
+    {
+      "conditions": [
+        {
+          "expr": "",
+          "path": ""
+        }
+      ],
+      "op": "merge",
+      "src": "/",
+      "dst": "/",
+      "options": {
+        "default": null,
+        "template": {
+          "value": "",
+          "format": ""
+        }
+      }
+    }
+  ]
+}
