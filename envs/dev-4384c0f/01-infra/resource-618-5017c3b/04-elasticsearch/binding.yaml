@@ -1,0 +1,18 @@
+consumerBindings: []
+producerBindings:
+- secretName: esrolearnsecret
+  secretType: es-auth
+  with:
+    file: ""
+    format: json
+    k8sNamespace: ""
+    template: |
+      {
+          "name": "esrolearnsecret",
+          "host": "{{.xlr8s.output.endpoint.value}}",
+          "port": "443",
+          "region": "{{.xlr8s.input.region}}",
+          "roleArn": "{{.xlr8s.input.assume_role_arn}}",
+          "userId": "",
+          "password": ""
+      }
