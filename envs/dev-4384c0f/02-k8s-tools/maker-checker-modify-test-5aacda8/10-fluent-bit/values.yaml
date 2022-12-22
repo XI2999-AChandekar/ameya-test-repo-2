@@ -1,9 +1,7 @@
 fluent-bit:
   dashboards:
     enabled: false
-  envFrom:
-  - secretRef:
-      name: esrolearnsecret
+  envFrom: []
   existingConfigMap: fluentbit-config
   fullnameOverride: fluent
   image:
@@ -15,10 +13,10 @@ fluent-bit:
     limits:
       memory: 256Mi
     requests:
-      cpu: 100m
-      memory: 128Mi
+      cpu: 10m
+      memory: 28Mi
   serviceAccount:
-    create: false
+    create: true
     name: opensearch-sa
   serviceMonitor:
     enabled: false
@@ -34,9 +32,9 @@ fluent-bit:
     operator: Exists
 fluentbitConfig:
   config: null
-  configmapName: fluentbit-config
+  configmapName: fluentbit-config-2
   inbuild:
-    isRoleARNProvided: false
+    isRoleARNProvided: true
     logStashPrefix: xlr8s
     namespaces:
     - default
