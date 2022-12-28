@@ -1,0 +1,26 @@
+consumerBindings:
+- consumptionType: k8s-secret
+  secretName: mprolearnsecret
+  secretType: prom-auth
+  with:
+    file: ""
+    format: json
+    k8sNamespace: monitoring
+    template: |
+      {
+          "MP_URL": "{{.xlr8s.secret.host}}",
+          "MP_HOST_PORT": "{{.xlr8s.secret.port}} ",
+          "HTTP_USER": "{{.xlr8s.secret.userId}}",
+          "HTTP_PASSWORD": "{{.xlr8s.secret.password}}",
+          "AWS_REGION": "{{.xlr8s.secret.region}}",
+          "AWS_ROLE_ARN": "{{.xlr8s.secret.roleArn}}"
+      }
+- consumptionType: file
+  secretName: ekskubeconfig
+  secretType: kube-config
+  with:
+    file: /data/kubeconfig
+    format: yaml
+    k8sNamespace: ""
+    template: '{{.xlr8s.secret.kubeconfig}}'
+producerBindings: []
