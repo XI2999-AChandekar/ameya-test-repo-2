@@ -1,0 +1,26 @@
+{
+  "operations": [
+    {
+      "conditions": [
+        {
+          "expr": "",
+          "path": ""
+        }
+      ],
+      "op": "add",
+      "src": "/",
+      "dst": "/",
+      "options": {
+        "defaults": {
+          "value": [
+            "abcd"
+          ]
+        },
+        "template": {
+          "value": "cv",
+          "format": "boolean"
+        }
+      }
+    }
+  ]
+}
