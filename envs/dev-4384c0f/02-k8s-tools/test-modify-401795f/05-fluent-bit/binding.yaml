@@ -1,12 +1,4 @@
 consumerBindings:
-- consumptionType: file
-  secretName: eks-test-modify
-  secretType: kube-config
-  with:
-    file: /data/kubeconfig
-    format: yaml
-    k8sNamespace: ""
-    template: '{{.xlr8s.secret.kubeconfig}}'
 - consumptionType: k8s-secret
   secretName: fluent-bit-secret
   secretType: es-auth
@@ -23,4 +15,12 @@ consumerBindings:
           "AWS_REGION": "{{.xlr8s.secret.region}}",
           "AWS_ROLE_ARN_FLUENT_BIT": "{{.xlr8s.secret.roleArn}}"
       }
+- consumptionType: file
+  secretName: eks-test-modify
+  secretType: kube-config
+  with:
+    file: /data/kubeconfig
+    format: yaml
+    k8sNamespace: ""
+    template: '{{.xlr8s.secret.kubeconfig}}'
 producerBindings: []

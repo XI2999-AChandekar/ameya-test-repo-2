@@ -39,4 +39,5 @@ fluentbitConfig:
     isRoleARNProvided: false
     logStashPrefix: xlr8s
     namespaces:
+    - istio-system
     - default
