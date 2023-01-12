@@ -1,0 +1,10 @@
+consumerBindings:
+- consumptionType: file
+  secretName: eks-test-modify
+  secretType: kube-config
+  with:
+    file: /data/kubeconfig
+    format: yaml
+    k8sNamespace: ""
+    template: '{{.xlr8s.secret.kubeconfig}}'
+producerBindings: []
